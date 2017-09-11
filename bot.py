@@ -2,7 +2,7 @@
 import LineAlpha
 from LineAlpha.lib.curve.ttypes import *
 from datetime import datetime
-from imgurpython import ImgurClient
+# from imgurpython import ImgurClient
 import time,random,sys,json,codecs,threading,glob,os,subprocess,multiprocessing
 
 cl = LineAlpha.LINE()
