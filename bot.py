@@ -47,7 +47,7 @@ image_path = 'tmp/tmp.jpg'
 
 # kk=ki=kc=cl
 
-helpMessage ="""[Ardh-] Bot(s)
+helpMessage ="""神Bot
 
 Use Prefix 「Ar」 to use the Bot(s)
 Prefix is Case sensitive but the commands is not.
