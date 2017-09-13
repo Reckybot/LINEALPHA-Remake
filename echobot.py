@@ -527,7 +527,28 @@ def bot(op):
                         cl.sendText(msg.to,"Command denied.")
                         cl.sendText(msg.to,"Admin permission required.")
                         print "[Error]Command denied - Admin permission required"
-#-----------------------[Send Profile Section]------------------------                    
+#-----------------------[Send Profile Section]------------------------            
+            elif msg.text in ["BGbot","BG bot","BG Bot"]:
+                        G = cl.getGroup(msg.to)
+                        ginfo = cl.getGroup(msg.to)
+                        G.preventJoinByTicket = False
+                        cl.updateGroup(G)
+                        invsend = 0
+                        Ticket = cl.reissueGroupTicket(msg.to)
+                        ki.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.2)
+                        kk.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.2)
+                        kc.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.2)
+                        kg.acceptGroupInvitationByTicket(msg.to,Ticket)
+                        time.sleep(0.2)
+                        G = cl.getGroup(msg.to)
+                        G.preventJoinByTicket = True
+                        ki.updateGroup(G)
+                        print "kicker ok"
+                        G.preventJoinByTicket(G)
+                        ki.updateGroup(G)
             elif msg.text in ["Ar Bot all","Ar bot all"]:
                 msg.contentType = 13
                 msg.contentMetadata = {'mid': mid}
