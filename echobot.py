@@ -10,23 +10,23 @@ import time,random,sys,json,codecs,threading,glob,os,subprocess,multiprocessing
 #bot.login(token="AuthToken")
 
 cl = LineAlpha.LINE()
-cl.login(token="AuthToken")
+cl.login(qr=True)
 cl.loginResult()
 
 kk = LineAlpha.LINE()
-kk.login(token="AuthToken")
+kk.login(qr=True)
 kk.loginResult()
 
 ki = LineAlpha.LINE()
-ki.login(token="AuthToken")
+ki.login(qr=True)
 ki.loginResult()
 
 kc = LineAlpha.LINE()
-kc.login(token="AuthToken")
+kc.login(qr=True)
 kc.loginResult()
 
 kg = LineAlpha.LINE()
-kg.login(token="AuthToken")
+kg.login(qr=True)
 kg.loginResult()
 
 #selfbot (akun sendiri) cuman dibutuhin kalo mau auto join kalo di kick
@@ -52,45 +52,7 @@ sys.setdefaultencoding('utf-8')
 
 # kk=ki=kc=cl
 
-helpMessage ="""[Ardh-] Bot(s) Command list:
-
-Use Prefix 「Ar」 to use the Bot(s)
-Prefix is Case sensitive but the commands is not.
-
-[Gid] - Show Group ID
-[Mid all] - Show all the Bot(s) MID
-[Bot 1/2/3/4/5] - Shows the specific Bot MID
-[Bot all] - Show all the Bot(s) Contact
-[Bot 1/2/3/4/5] - Shows the specific Bot Contact
-[Yid] - Show your ID
-[Contact 「mid」] - Give Contact by MID
-[Join on/off] - Auto join group
-[Leave on/off] - Allows the bot to leave the group
-
-[*] Command in the groups [*]
-[Ginfo] - Group Info
-[Banlist] - Check Banlist
-[Cancel] - Cancel all pending(s) invitation
-[Stalk 「ID」] - Upload lastest instagram picture from ID
-
-[*] Admin and Staff Commands [*]
-[Absen] - Check if bot is Online
-[Glink on/off] - Turn invitation link for group on/off
-[Cancel on/off] - Turn auto cancel invite on/off 
-[Gn 「group name」] - Change Group Name
-[Sp/Speed] - Check bot response speed
-[Random:「A」] - Randomize group name A times
-[Bc 「text」] - Let the bot send a text
-
-[*] Admin only Commands [*]
-[Cleanse] - Clear all members in the group
-[Bye all] - Bot Leave
-[Ban 「@」] - Ban By Tag
-[Unban 「@」] - Unban By Tag
-[Ban] - By Sharing Contact
-[Unban] - By Sharing Contact
-[Kill ban] - Kick all banned contact(s)
-[Staff add/remove @] - Add or Remove Staff By Tag
+helpMessage ="""ℬᎶ戦神TEST
 """
 
 KAC=[cl,ki,kk,kc,kg]
@@ -101,29 +63,29 @@ Cmid = kc.getProfile().mid
 Dmid = kg.getProfile().mid
 Bots = [mid,Amid,Bmid,Cmid,Dmid]
 #nyalain bot dulu baru ketik "Ar Yid buat ngedapetin MID akun line mu"
-admin = ["MID_ADMIN"]
-staff = ["MID_ADMIN"]
-adminMID = "MID_ADMIN"
+admin = ["uc216d8664c4e1f43772c98b1b0b8956e"]
+staff = ["uc216d8664c4e1f43772c98b1b0b8956e"]
+adminMID = "uc216d8664c4e1f43772c98b1b0b8956e"
 wait = {
-    'contact':True,
+    'contact':False,
     'autoJoin':True,
     'autoCancel':{"on":True,"members":1},
     'leaveRoom':True,
     'timeline':True,
     'autoAdd':True,
-    'message':"Thanks for add me",
+    'message':"ℬᎶ戦神Bot 謝謝加入",
     "lang":"JP",
-    "comment":"Thanks for add me",
+    "comment":"ℬᎶ戦神Bot 謝謝加入",
     "commentOn":False,
     "commentBlack":{},
     "wblack":False,
     "dblack":False,
     "clock":True,
-    "cName":"[Ardh-]BOT1",
-    "cName2":"[Ardh-]BOT2",
-    "cName3":"[Ardh-]BOT3",
-    "cName4":"[Ardh-]BOT4",
-    "cName5":"[Ardh-]BOT5",
+    "cName":"ℬᎶ戦神Bot",
+    "cName2":"血の戦神",
+    "cName3":"Battle God",
+    "cName4":"戦神のstyle",
+    "cName5":"神聖のℬᎶ",
     "blacklist":{},
     "wblacklist":False,
     "dblacklist":False,
@@ -205,12 +167,12 @@ def bot(op):
                     if op.param2 in admin:
                         pass
                     else:
-                        cl.kickoutFromGroup(op.param1,[op.param2])
+                        random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                         wait["blacklist"][op.param2] = True
-                        cl.reissueGroupTicket(op.param1)
-                        X = cl.getGroup(op.param1)
+                        random.choice(KAC).reissueGroupTicket(op.param1)
+                        X = random.choice(KAC).getGroup(op.param1)
                         X.preventJoinByTicket = True
-                        cl.updateGroup(X)
+                        random.choice(KAC).updateGroup(X)
                         print "Url Opened, Autokick on"
                 else:
                     print "random group update"
@@ -284,11 +246,11 @@ def bot(op):
                 if op.param2 in Bots:
                     pass
                 else:
-                    cl.kickoutFromGroup(op.param1,[op.param2])
+                    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                     wait["blacklist"][op.param2] = True
                     print "kicker kicked"
                     try:
-                        cl.inviteIntoGroup(op.param1,op.param3)
+                        random.choice(KAC).inviteIntoGroup(op.param1,op.param3)
                         adm.acceptGroupInvitation(op.param1)
                     except:
                         random.choice(KAC).inviteIntoGroup(op.param1,op.param3)
@@ -302,16 +264,23 @@ def bot(op):
                 if op.param2 in admin:
                     pass
                 else:
-                    cl.kickoutFromGroup(op.param1,[op.param2])
+                    random.choice(KAC).kickoutFromGroup(op.param1,[op.param2])
                     wait["blacklist"][op.param2] = True
                     print "kicker kicked"
                     try:
-                        kk.inviteIntoGroup(op.param1,op.param3)
-                        cl.acceptGroupInvitation(op.param1)
-                    except:
-                        random.choice(KAC).inviteIntoGroup(op.param1,op.param3)
-                        cl.acceptGroupInvitation(op.param1)
-                    print "BOT1 Joined"
+                        G = random.choice(KAC).getGroup(op.param1)
+                        G.preventJoinByTicket = False
+                        random.choice(KAC).updateGroup(G)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                        X = random.choice(KAC).getGroup(op.param1)
+                        X.preventJoinByTicket = True
+                        random.choice(KAC).updateGroup(X)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
 
             if Amid in op.param3:
                 print "BOT2 has been kicked"
@@ -323,12 +292,20 @@ def bot(op):
                     cl.kickoutFromGroup(op.param1,[op.param2])
                     wait["blacklist"][op.param2] = True
                     print "kicker kicked"
-                    try:
-                        ki.inviteIntoGroup(op.param1,op.param3)
-                        kk.acceptGroupInvitation(op.param1)
-                    except:
-                        random.choice(KAC).inviteIntoGroup(op.param1,op.param3)
-                        kk.acceptGroupInvitation(op.param1)
+                   try:
+                        G = random.choice(KAC).getGroup(op.param1)
+                        G.preventJoinByTicket = False
+                        random.choice(KAC).updateGroup(G)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                        X = random.choice(KAC).getGroup(op.param1)
+                        X.preventJoinByTicket = True
+                        random.choice(KAC).updateGroup(X)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     print "BOT2 Joined"
 
             if Bmid in op.param3:
@@ -342,11 +319,19 @@ def bot(op):
                     wait["blacklist"][op.param2] = True
                     print "kicker kicked"
                     try:
-                        kc.inviteIntoGroup(op.param1,op.param3)
-                        ki.acceptGroupInvitation(op.param1)
-                    except:
-                        random.choice(KAC).inviteIntoGroup(op.param1,op.param3)
-                        ki.acceptGroupInvitation(op.param1)
+                        G = random.choice(KAC).getGroup(op.param1)
+                        G.preventJoinByTicket = False
+                        random.choice(KAC).updateGroup(G)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                        X = random.choice(KAC).getGroup(op.param1)
+                        X.preventJoinByTicket = True
+                        random.choice(KAC).updateGroup(X)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     print "BOT3 Joined"
 
             if Cmid in op.param3:
@@ -360,11 +345,19 @@ def bot(op):
                     wait["blacklist"][op.param2] = True
                     print "kicker kicked"
                     try:
-                        kg.inviteIntoGroup(op.param1,op.param3)
-                        kc.acceptGroupInvitation(op.param1)
-                    except:
-                        random.choice(KAC).inviteIntoGroup(op.param1,op.param3)
-                        kc.acceptGroupInvitation(op.param1)
+                        G = random.choice(KAC).getGroup(op.param1)
+                        G.preventJoinByTicket = False
+                        random.choice(KAC).updateGroup(G)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                        X = random.choice(KAC).getGroup(op.param1)
+                        X.preventJoinByTicket = True
+                        random.choice(KAC).updateGroup(X)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     print "BOT4 Joined"
 
             if Dmid in op.param3:
@@ -378,11 +371,19 @@ def bot(op):
                     wait["blacklist"][op.param2] = True
                     print "kicker kicked"
                     try:
-                        cl.inviteIntoGroup(op.param1,op.param3)
-                        kg.acceptGroupInvitation(op.param1)
-                    except:
-                        random.choice(KAC).inviteIntoGroup(op.param1,op.param3)
-                        kg.acceptGroupInvitation(op.param1)
+                        G = random.choice(KAC).getGroup(op.param1)
+                        G.preventJoinByTicket = False
+                        random.choice(KAC).updateGroup(G)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                        cl.acceptGroupInvitationByTicket(op.param1,Ti)
+                        ki.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kk.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kc.acceptGroupInvitationByTicket(op.param1,Ti)
+                        kg.acceptGroupInvitationByTicket(op.param1,Ti)
+                        X = random.choice(KAC).getGroup(op.param1)
+                        X.preventJoinByTicket = True
+                        random.choice(KAC).updateGroup(X)
+                        Ti = random.choice(KAC).reissueGroupTicket(op.param1)
                     print "BOT5 Joined"
 
             else:
