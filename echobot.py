@@ -10,29 +10,29 @@ import time,random,sys,json,codecs,threading,glob,os,subprocess,multiprocessing
 #bot.login(token="AuthToken")
 
 cl = LineAlpha.LINE()
-cl.login(qr=True)
+cl.login(token="Ek2YEQc88p5rv4Emh2Y0.3FLXqaAHaqU2vr+bb+uJKa.RMKY/945O4YDKFQ0HnEv6RB5lnFleSo8O4BdYjVnnmg=")
 cl.loginResult()
 
 kk = LineAlpha.LINE()
-kk.login(qr=True)
+kk.login(token="Eke0ZHXw1sGxlPDeyEr8.iarQyHUgknIRni5Recj+Ea.SzucqyxksPiFKXXLdVZnxgrOcci7YDRnioS47HaQ0Ic=")
 kk.loginResult()
 
 ki = LineAlpha.LINE()
-ki.login(qr=True)
+ki.login(token="EkWYRTORPpjA62bbF6x4.WjRz5oW1/nfIsExC/cMSza.hToV61FWZ6SqgNybQeCdvAJsrm10jIjAiQfdxBhn07k=")
 ki.loginResult()
 
 kc = LineAlpha.LINE()
-kc.login(qr=True)
+kc.login(token="EkNrxbr69Eq5TmkBDeG1.qmf+mG4qg58AVj7ARoBTuq.mW1hjAj6ewAzNYxLHjSmm+1E4ulu3H9fmZjyXsNOwVo=")
 kc.loginResult()
 
 kg = LineAlpha.LINE()
-kg.login(qr=True)
+kg.login(token="EkoTuPo5QABsWymNq19d.eem+p7zyhJGXULW/YtGNpq.v3qjt1nXO3es2ulBsws4d9NUunrJOFLeVGq07jvyxDc=")
 kg.loginResult()
 
 #selfbot (akun sendiri) cuman dibutuhin kalo mau auto join kalo di kick
 
 adm = LineAlpha.LINE()
-adm.login(token="AuthToken")
+adm.login(token="Ek4fnozEd3n5XUSpQeWe.WHByzKXoh0n3ljIXSlIvBG.azgBe3Uttt5wI8nmYlzZM1wJfgAymOEaQumWX9QiCRc=")
 adm.loginResult()
 
 #imgur stuff
@@ -64,7 +64,7 @@ Dmid = kg.getProfile().mid
 Bots = [mid,Amid,Bmid,Cmid,Dmid]
 #nyalain bot dulu baru ketik "Ar Yid buat ngedapetin MID akun line mu"
 admin = ["uc216d8664c4e1f43772c98b1b0b8956e"]
-staff = ["uc216d8664c4e1f43772c98b1b0b8956e"]
+staff = ["uc216d8664c4e1f43772c98b1b0b8956e","u061f63eed1e6d32edc68aead1f6671cc"]
 adminMID = "uc216d8664c4e1f43772c98b1b0b8956e"
 wait = {
     'contact':False,
