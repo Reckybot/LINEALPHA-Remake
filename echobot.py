@@ -281,6 +281,7 @@ def bot(op):
                         X.preventJoinByTicket = True
                         random.choice(KAC).updateGroup(X)
                         Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                print "Admin Joined"    
 
             if Amid in op.param3:
                 print "BOT2 has been kicked"
