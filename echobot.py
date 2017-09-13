@@ -281,6 +281,7 @@ def bot(op):
                         X.preventJoinByTicket = True
                         random.choice(KAC).updateGroup(X)
                         Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                    except: 
 
             if Amid in op.param3:
                 print "BOT2 has been kicked"
@@ -306,6 +307,7 @@ def bot(op):
                         X.preventJoinByTicket = True
                         random.choice(KAC).updateGroup(X)
                         Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                    except: 
                     print "BOT2 Joined"
 
             if Bmid in op.param3:
@@ -332,6 +334,7 @@ def bot(op):
                         X.preventJoinByTicket = True
                         random.choice(KAC).updateGroup(X)
                         Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                    except: 
                     print "BOT3 Joined"
 
             if Cmid in op.param3:
@@ -358,6 +361,7 @@ def bot(op):
                         X.preventJoinByTicket = True
                         random.choice(KAC).updateGroup(X)
                         Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                    except: 
                     print "BOT4 Joined"
 
             if Dmid in op.param3:
@@ -384,6 +388,7 @@ def bot(op):
                         X.preventJoinByTicket = True
                         random.choice(KAC).updateGroup(X)
                         Ti = random.choice(KAC).reissueGroupTicket(op.param1)
+                    except: 
                     print "BOT5 Joined"
 
             else:
